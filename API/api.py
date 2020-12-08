@@ -29,10 +29,10 @@ def score():
       cords_data = request.args.get('cords')
    cords_data = "{"+ cords_data +"}"
    a = load_coords(course,  asana)
-   print(a)
+   # print(a)
    b = get_coords(json.loads(cords_data))
    ret, b = rescale(b)
-   print(b)
+   # print(b)
    return str(get_score(a,b))
    
 if __name__ == '__main__':
