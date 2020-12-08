@@ -106,7 +106,10 @@ def angleScore(keypoint_coords1, keypoint_coords2):
         a1,b1 = keypoint_coords2[6,0] - keypoint_coords2[8,0], keypoint_coords2[6,1] - keypoint_coords2[8,1]
         a2,b2 = keypoint_coords2[10,0] - keypoint_coords2[8,0], keypoint_coords2[10,1] - keypoint_coords2[8,1]
         cos2 = (a1*a2 + b1*b2) / math.sqrt(a1**2 + b1**2) / math.sqrt(a2**2 + b2**2)
-        hand1 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
+        if(cos1>1 or cos2>1):
+            hand1 = 90.0
+        else:
+            hand1 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
     #     print( "{:.2f}".format(hand1) )
     # else:
     #     print()
@@ -122,7 +125,10 @@ def angleScore(keypoint_coords1, keypoint_coords2):
         a1,b1 = keypoint_coords2[5,0] - keypoint_coords2[7,0], keypoint_coords2[5,1] - keypoint_coords2[7,1]
         a2,b2 = keypoint_coords2[9,0] - keypoint_coords2[7,0], keypoint_coords2[9,1] - keypoint_coords2[7,1]
         cos2 = (a1*a2 + b1*b2) / math.sqrt(a1**2 + b1**2) / math.sqrt(a2**2 + b2**2)
-        hand2 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
+        if(cos1>1 or cos2>1):
+            hand2 = 90.0
+        else:
+            hand2 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
     #     print( "{:.2f}".format(hand2) )
     # else:
     #     print()
@@ -138,7 +144,10 @@ def angleScore(keypoint_coords1, keypoint_coords2):
         a1,b1 = keypoint_coords2[12,0] - keypoint_coords2[14,0], keypoint_coords2[12,1] - keypoint_coords2[14,1]
         a2,b2 = keypoint_coords2[16,0] - keypoint_coords2[14,0], keypoint_coords2[16,1] - keypoint_coords2[14,1]
         cos2 = (a1*a2 + b1*b2) / math.sqrt(a1**2 + b1**2) / math.sqrt(a2**2 + b2**2)
-        leg1 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
+        if(cos1>1 or cos2>1):
+            leg1 = 90.0
+        else:
+            leg1 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
     #     print( "{:.2f}".format(leg1) )
     # else:
     #     print()
@@ -154,7 +163,10 @@ def angleScore(keypoint_coords1, keypoint_coords2):
         a1,b1 = keypoint_coords2[11,0] - keypoint_coords2[13,0], keypoint_coords2[11,1] - keypoint_coords2[13,1]
         a2,b2 = keypoint_coords2[15,0] - keypoint_coords2[13,0], keypoint_coords2[15,1] - keypoint_coords2[13,1]
         cos2 = (a1*a2 + b1*b2) / math.sqrt(a1**2 + b1**2) / math.sqrt(a2**2 + b2**2)
-        leg2 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
+        if(cos1>1 or cos2>1):
+            leg2 = 90.0
+        else:
+            leg2 = math.degrees(math.acos(cos1)) - math.degrees(math.acos(cos2))
     #     print( "{:.2f}".format(leg2) )
     # else:
     #     print()
